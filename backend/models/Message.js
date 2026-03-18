@@ -9,6 +9,14 @@ const messageSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  senderName: {
+    type: String,
+    default: 'Anonymous',
+  },
+  partyId: {
+    type: String,
+    required: true,
+  },
   timestamp: {
     type: String,
     required: true,
