@@ -23,4 +23,4 @@ jobs:
 
       # Step C: Try to build the containers
       - name: Build Frontend and Backend Images
-        run: docker-compose build
+        run: docker compose build
