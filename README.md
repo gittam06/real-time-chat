@@ -51,10 +51,10 @@ graph TD;
     %% Event Flow
     classDef event fill:#1e293b,stroke:#3b82f6,stroke-width:2px,color:#fff;
     Socket -- "on('join_party')" --> Validate{Is Room Active?}
-    Validate -- "Yes" --> JoinRoom[Join Socket Room]:::event
-    Validate -- "No" --> EmitError[Emit 'party_error']:::event
-    Socket -- "on('send_message')" --> Broadcast[io.to(room).emit]:::event
-    Broadcast --> DB_Save[Save to Database]:::event
+    Validate -- "Yes" --> JoinRoom["Join Socket Room"]:::event
+    Validate -- "No" --> EmitError["Emit 'party_error'"]:::event
+    Socket -- "on('send_message')" --> Broadcast["io.to(room).emit"]:::event
+    Broadcast --> DB_Save["Save to Database"]:::event
 ```
 
 ## 🚀 Getting Started
