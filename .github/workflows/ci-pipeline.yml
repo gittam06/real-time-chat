@@ -1,0 +1,26 @@
+name: Chat App CI Pipeline
+
+# 1. When should this pipeline run?
+on:
+  push:
+    branches: [ "main", "master" ]
+  pull_request:
+    branches: [ "main", "master" ]
+
+jobs:
+  build-and-verify:
+    # 2. What kind of server should GitHub spin up to run this?
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step A: Download your code onto the GitHub server
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      # Step B: Make sure Docker Compose is ready
+      - name: Set up Docker
+        uses: docker/setup-buildx-action@v3
+
+      # Step C: Try to build the containers
+      - name: Build Frontend and Backend Images
+        run: docker-compose build
